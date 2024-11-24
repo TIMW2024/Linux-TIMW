@@ -1,39 +1,21 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-TIMW
-pkgver=6.12.1
+pkgver=20241120.r0.gac24e26aa08f
+_srcname=linux-next
 pkgrel=1
 pkgdesc='Linux-TIMW'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
 license=(GPL-2.0-only)
-makedepends=(
-  bc
-  cpio
-  gettext
-  libelf
-  pahole
-  perl
-  python
-  tar
-  xz
-
-  # htmldocs
-  graphviz
-  imagemagick
-  python-sphinx
-  python-yaml
-  texlive-latexextra
-)
+makedepends=('bc' 'libelf' 'git' 'pahole' 'cpio' 'perl' 'tar' 'xz' 'python')
 options=(
   !debug
   !strip
 )
-_srcname=linux-${pkgver%.*}
-source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.xz
-  https://cdn.kernel.org/pub/linux/kernel/next/patch-v6.12-next-20241122.xz
-  config  # the main kernel config file
+source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/next/${_srcname}.git"
+         https://cdn.kernel.org/pub/linux/kernel/next/patch-v6.12-next-20241122.xz
+         config  # the main kernel config file
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
@@ -44,6 +26,11 @@ validpgpkeys=(
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+pkgver() {
+  cd $_srcname
+  git describe --long --tags |  sed 's/next.//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 prepare() {
   cd $_srcname
