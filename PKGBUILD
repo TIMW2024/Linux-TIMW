@@ -1,7 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-TIMW
-pkgver=6.12.1
+pkgver=20241120.r0.gac24e26aa08f
+_srcname=linux-next
 pkgrel=1
 pkgdesc='Linux-TIMW'
 url='https://github.com/archlinux/linux'
@@ -29,7 +30,6 @@ options=(
   !debug
   !strip
 )
-_srcname=linux-${pkgver%.*}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.xz
   https://cdn.kernel.org/pub/linux/kernel/next/patch-v6.12-next-20241122.xz
@@ -44,6 +44,11 @@ validpgpkeys=(
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+pkgver() {
+  cd $_srcname
+  git describe --long --tags |  sed 's/next.//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 prepare() {
   cd $_srcname
