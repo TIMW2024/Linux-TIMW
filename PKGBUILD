@@ -8,24 +8,7 @@ pkgdesc='Linux-TIMW'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
 license=(GPL-2.0-only)
-makedepends=(
-  bc
-  cpio
-  gettext
-  libelf
-  pahole
-  perl
-  python
-  tar
-  xz
-
-  # htmldocs
-  graphviz
-  imagemagick
-  python-sphinx
-  python-yaml
-  texlive-latexextra
-)
+makedepends=('bc' 'libelf' 'git' 'pahole' 'cpio' 'perl' 'tar' 'xz' 'python')
 options=(
   !debug
   !strip
