@@ -65,7 +65,7 @@ prepare() {
   echo "Setting config..."
   cp ../config .config
   make olddefconfig
-  make menuconfig
+  #make menuconfig
   diff -u ../config .config || :
 
   make -s kernelrelease > version
