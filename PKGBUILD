@@ -31,7 +31,7 @@ options=(
   !strip
 )
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/next/${_srcname}.git"
- https://cdn.kernel.org/pub/linux/kernel/next/patch-v6.12-next-20241122.xz
+https://cdn.kernel.org/pub/linux/kernel/next/patch-v6.12-next-20241122.xz
   config  # the main kernel config file
 )
 validpgpkeys=(
