@@ -1,4 +1,4 @@
-Optimization
+Optimization -Removed/Tweaked
 - Mitigation
 - symmetric multi-processing support
 - Kernel debbuging
