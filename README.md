@@ -11,3 +11,6 @@ Optimization
 - x86 Debugging
 - Kernel Testing
 - More under the hood
+
+Next
+-file system optimization
