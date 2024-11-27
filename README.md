@@ -1,4 +1,4 @@
-Removed
+Tweaks
 - Mitigation
 - symmetric multi-processing support
 - Kernel debbuging
@@ -10,3 +10,6 @@ Removed
 - Filter access
 - x86 Debugging
 - Kernel Testing
+
+
+-More under the hood
