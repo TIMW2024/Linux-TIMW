@@ -1,4 +1,4 @@
-Optimization - Removed/Tweaked
+Optimization - Removed / Tweaked
 - Mitigation
 - symmetric multi-processing support
 - Kernel debbuging
@@ -13,4 +13,4 @@ Optimization - Removed/Tweaked
 - More under the hood
 
 Next
--file system optimization
+- file system optimization
