@@ -1,4 +1,4 @@
-Tweaks
+Optimization
 - Mitigation
 - symmetric multi-processing support
 - Kernel debbuging
