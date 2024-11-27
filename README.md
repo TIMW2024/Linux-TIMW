@@ -10,6 +10,4 @@ Tweaks
 - Filter access
 - x86 Debugging
 - Kernel Testing
-
-
--More under the hood
+- More under the hood
