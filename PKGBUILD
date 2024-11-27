@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-TIMW
-pkgver=20241125.r0.g85a2dd7d7c81
+pkgver=20241127.r0.g6f3d2b5299b0
 _srcname=linux-next
 pkgrel=1
 pkgdesc='Linux-TIMW'
